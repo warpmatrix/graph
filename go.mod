@@ -1,3 +1,3 @@
-module github.com/dominikbraun/graph
+module github.com/warpmatrix/graph
 
 go 1.18
