@@ -49,7 +49,9 @@
 // For detailed usage examples, take a look at the README.
 package graph
 
-import "errors"
+import (
+	"errors"
+)
 
 var (
 	ErrVertexNotFound      = errors.New("vertex not found")
@@ -228,7 +230,7 @@ type Edge[T any] struct {
 // "color" with value "red".
 type EdgeProperties struct {
 	Attributes map[string]string
-	Weight     int
+	Weight     float64
 	Data       any
 }
 
@@ -315,7 +317,7 @@ func IntHash(v int) int {
 // EdgeWeight returns a function that sets the weight of an edge to the given
 // weight. This is a functional option for the [graph.Graph.Edge] and
 // [graph.Graph.AddEdge] methods.
-func EdgeWeight(weight int) func(*EdgeProperties) {
+func EdgeWeight(weight float64) func(*EdgeProperties) {
 	return func(e *EdgeProperties) {
 		e.Weight = weight
 	}
@@ -357,13 +359,13 @@ func EdgeData(data any) func(*EdgeProperties) {
 // "color" with value "red".
 type VertexProperties struct {
 	Attributes map[string]string
-	Weight     int
+	Weight     float64
 }
 
 // VertexWeight returns a function that sets the weight of a vertex to the given
 // weight. This is a functional option for the [graph.Graph.Vertex] and
 // [graph.Graph.AddVertex] methods.
-func VertexWeight(weight int) func(*VertexProperties) {
+func VertexWeight(weight float64) func(*VertexProperties) {
 	return func(e *VertexProperties) {
 		e.Weight = weight
 	}

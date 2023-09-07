@@ -8,7 +8,7 @@ import (
 	"io"
 	"text/template"
 
-	"github.com/dominikbraun/graph"
+	"github.com/warpmatrix/graph"
 )
 
 // ToDo: This template should be simplified and split into multiple templates.
@@ -32,9 +32,9 @@ type description struct {
 type statement struct {
 	Source           interface{}
 	Target           interface{}
-	SourceWeight     int
+	SourceWeight     float64
 	SourceAttributes map[string]string
-	EdgeWeight       int
+	EdgeWeight       float64
 	EdgeAttributes   map[string]string
 }
 
