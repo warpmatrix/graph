@@ -20,7 +20,7 @@ type priorityItem[T comparable] struct {
 	index    int
 }
 
-func newPriorityQueue[T comparable]() *priorityQueue[T] {
+func NewPriorityQueue[T comparable]() *priorityQueue[T] {
 	return &priorityQueue[T]{
 		items: &minHeap[T]{},
 		cache: map[T]*priorityItem[T]{},

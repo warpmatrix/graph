@@ -73,7 +73,7 @@ func ShortestPath[K comparable, T any](g Graph[K, T], source, target K) ([]K, er
 	weights[source] = 0
 	visited[target] = true
 
-	queue := newPriorityQueue[K]()
+	queue := NewPriorityQueue[K]()
 	adjacencyMap, err := g.AdjacencyMap()
 	if err != nil {
 		return nil, fmt.Errorf("could not get adjacency map: %w", err)
@@ -107,7 +107,7 @@ func ShortestPath[K comparable, T any](g Graph[K, T], source, target K) ([]K, er
 				edgeWeight = 1
 			}
 
-			weight := weights[vertex] + float64(edgeWeight)
+			weight := weights[vertex] + edgeWeight
 
 			if weight < weights[adjacency] && !hasInfiniteWeight {
 				weights[adjacency] = weight

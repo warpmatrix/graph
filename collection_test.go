@@ -25,7 +25,7 @@ func TestPriorityQueue_Push(t *testing.T) {
 	}
 
 	for name, test := range tests {
-		queue := newPriorityQueue[int]()
+		queue := NewPriorityQueue[int]()
 
 		for i, item := range test.items {
 			queue.Push(item, test.priorities[i])
@@ -80,7 +80,7 @@ func TestPriorityQueue_Pop(t *testing.T) {
 	}
 
 	for name, test := range tests {
-		queue := newPriorityQueue[int]()
+		queue := NewPriorityQueue[int]()
 
 		for i, item := range test.items {
 			queue.Push(item, test.priorities[i])
@@ -156,7 +156,7 @@ func TestPriorityQueue_UpdatePriority(t *testing.T) {
 	}
 
 	for name, test := range tests {
-		queue := newPriorityQueue[int]()
+		queue := NewPriorityQueue[int]()
 
 		for _, item := range test.items {
 			queue.Push(item.value, item.priority)
@@ -210,7 +210,7 @@ func TestPriorityQueue_Len(t *testing.T) {
 	}
 
 	for name, test := range tests {
-		queue := newPriorityQueue[int]()
+		queue := NewPriorityQueue[int]()
 
 		for i, item := range test.items {
 			queue.Push(item, test.priorities[i])
